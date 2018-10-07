@@ -20,6 +20,10 @@ spec:
       {{if (and (eq .Values.Master.ServiceType "NodePort") (not (empty .Values.Master.NodePort)))}}
       nodePort: {{.Values.Master.NodePort}}
       {{end}}
+{{if .Values.Master.ExternalIPs}}
+  externalIPs:
+{{ toYaml .Values.Master.ExternalIPs | indent 4 }}
+{{end}}
   selector:
     component: "{{.Release.Name}}-{{.Values.Master.Component}}"
   type: {{.Values.Master.ServiceType}}

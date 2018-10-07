@@ -76,6 +76,9 @@ Master:
   - 0.0.0.0/0
   # Optionally assign a known public LB IP
   # LoadBalancerIP: 1.2.3.4
+  # Optionally assign external IPS, useful on single node clusters
+  # ExternalIPs:
+  #   - 1.2.3.4
   # Optionally configure a JMX port
   # requires additional JavaOpts, ie
   # JavaOpts: >
